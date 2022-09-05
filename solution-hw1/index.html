@@ -7,7 +7,7 @@
 
     <header>
       <img src="logo/logo-01.svg" alt="Bun Bun Bake Shop logo with text" width="400" />
-      
+
       <nav>
         <span>PRODUCTS</span>
         <span>CART</span>
@@ -17,7 +17,8 @@
     </header>
     
     <div class="product-grid">
-      <article class="product-card">
+      <article class="product-card" id="original">
+        <img src="products/original-cinnamon-roll.jpg" alt="Picture of original flavor cinnamon roll" width="200">
         <h3>Original cinnamon roll</h3>
 
         <section class="row-glazing">
@@ -33,16 +34,16 @@
 
         <section class="row-pack">
           <label for="pack-size">Pack Size:
-            <input type="radio" id="choice1" name="pack" value=1>
+            <input type="radio" id="choice1" name="original-pack" value=1>
             <label for="choice1">1</label>
           
-            <input type="radio" id="choice2" name="pack" value=3>
+            <input type="radio" id="choice2" name="original-pack" value=3>
             <label for="choice2">3</label>
           
-            <input type="radio" id="choice3" name="pack" value=6>
+            <input type="radio" id="choice3" name="original-pack" value=6>
             <label for="choice3">6</label>
 
-            <input type="radio" id="choice4" name="pack" value=12>
+            <input type="radio" id="choice4" name="original-pack" value=12>
             <label for="choice4">12</label>
           </label>
         </section>
@@ -53,7 +54,8 @@
         </section>
       </article>
       
-      <article class="product-card">
+      <article class="product-card" id="apple">
+        <img src="products/apple-cinnamon-roll.jpg" alt="Picture of apple flavored cinnamon roll" width="200">
         <h3>Apple cinnamon roll</h3>
         <section class="row-glazing">
           <label for="glazing">Glazing:
@@ -68,16 +70,16 @@
         
         <section class="row-pack">
           <label for="pack-size">Pack Size:
-            <input type="radio" id="choice1" name="pack" value=1>
+            <input type="radio" id="choice1" name="apple-pack" value=1>
             <label for="choice1">1</label>
         
-            <input type="radio" id="choice2" name="pack" value=3>
+            <input type="radio" id="choice2" name="apple-pack" value=3>
             <label for="choice2">3</label>
         
-            <input type="radio" id="choice3" name="pack" value=6>
+            <input type="radio" id="choice3" name="apple-pack" value=6>
             <label for="choice3">6</label>
         
-            <input type="radio" id="choice4" name="pack" value=12>
+            <input type="radio" id="choice4" name="apple-pack" value=12>
             <label for="choice4">12</label>
           </label>
         </section>
@@ -88,7 +90,8 @@
         </section>
       </article>
       
-      <article class="product-card">
+      <article class="product-card" id="raisin">
+        <img src="products/raisin-cinnamon-roll.jpg" alt="Picture of raisin flavored cinnamon roll" width="200">
         <h3>Raisin cinnamon roll</h3>
         <section class="row-glazing">
           <label for="glazing">Glazing:
@@ -103,16 +106,16 @@
         
         <section class="row-pack">
           <label for="pack-size">Pack Size:
-            <input type="radio" id="choice1" name="pack" value=1>
+            <input type="radio" id="choice1" name="raisin-pack" value=1>
             <label for="choice1">1</label>
         
-            <input type="radio" id="choice2" name="pack" value=3>
+            <input type="radio" id="choice2" name="raisin-pack" value=3>
             <label for="choice2">3</label>
         
-            <input type="radio" id="choice3" name="pack" value=6>
+            <input type="radio" id="choice3" name="raisin-pack" value=6>
             <label for="choice3">6</label>
         
-            <input type="radio" id="choice4" name="pack" value=12>
+            <input type="radio" id="choice4" name="raisin-pack" value=12>
             <label for="choice4">12</label>
           </label>
         </section>
@@ -123,7 +126,8 @@
         </section>
       </article>
       
-      <article class="product-card">
+      <article class="product-card" id="walnut">
+        <img src="products/walnut-cinnamon-roll.jpg" alt="Picture of walnut flavored cinnamon roll" width="200">
         <h3>Walnut cinnamon roll</h3>
         <section class="row-glazing">
           <label for="glazing">Glazing:
@@ -138,16 +142,16 @@
         
         <section class="row-pack">
           <label for="pack-size">Pack Size:
-            <input type="radio" id="choice1" name="pack" value=1>
+            <input type="radio" id="choice1" name="walnut-pack" value=1>
             <label for="choice1">1</label>
         
-            <input type="radio" id="choice2" name="pack" value=3>
+            <input type="radio" id="choice2" name="walnut-pack" value=3>
             <label for="choice2">3</label>
         
-            <input type="radio" id="choice3" name="pack" value=6>
+            <input type="radio" id="choice3" name="walnut-pack" value=6>
             <label for="choice3">6</label>
         
-            <input type="radio" id="choice4" name="pack" value=12>
+            <input type="radio" id="choice4" name="walnut-pack" value=12>
             <label for="choice4">12</label>
           </label>
         </section>
@@ -158,7 +162,8 @@
         </section>
       </article>
       
-      <article class="product-card">
+      <article class="product-card" id="chocolate">
+        <img src="products/double-chocolate-cinnamon-roll.jpg" alt="Picture of double chocolate flavored cinnamon roll" width="200">
         <h3>Double-chocolate cinnamon roll</h3>
         <section class="row-glazing">
           <label for="glazing">Glazing:
@@ -173,16 +178,16 @@
         
         <section class="row-pack">
           <label for="pack-size">Pack Size:
-            <input type="radio" id="choice1" name="pack" value=1>
+            <input type="radio" id="choice1" name="chocolate-pack" value=1>
             <label for="choice1">1</label>
         
-            <input type="radio" id="choice2" name="pack" value=3>
+            <input type="radio" id="choice2" name="chocolate-pack" value=3>
             <label for="choice2">3</label>
         
-            <input type="radio" id="choice3" name="pack" value=6>
+            <input type="radio" id="choice3" name="chocolate-pack" value=6>
             <label for="choice3">6</label>
         
-            <input type="radio" id="choice4" name="pack" value=12>
+            <input type="radio" id="choice4" name="chocolate-pack" value=12>
             <label for="choice4">12</label>
           </label>
         </section>
@@ -193,7 +198,8 @@
         </section>
       </article>
       
-      <article class="product-card">
+      <article class="product-card" id="strawberry">
+        <img src="products/strawberry-cinnamon-roll.jpg" alt="Picture of strawberry flavored cinnamon roll" width="200">
         <h3>Strawberry cinnamon roll</h3>
         <section class="row-glazing">
           <label for="glazing">Glazing:
@@ -208,16 +214,16 @@
         
         <section class="row-pack">
           <label for="pack-size">Pack Size:
-            <input type="radio" id="choice1" name="pack" value=1>
+            <input type="radio" id="choice1" name="strawberry-pack" value=1>
             <label for="choice1">1</label>
         
-            <input type="radio" id="choice2" name="pack" value=3>
+            <input type="radio" id="choice2" name="strawberry-pack" value=3>
             <label for="choice2">3</label>
         
-            <input type="radio" id="choice3" name="pack" value=6>
+            <input type="radio" id="choice3" name="strawberry-pack" value=6>
             <label for="choice3">6</label>
         
-            <input type="radio" id="choice4" name="pack" value=12>
+            <input type="radio" id="choice4" name="strawberry-pack" value=12>
             <label for="choice4">12</label>
           </label>
         </section>
