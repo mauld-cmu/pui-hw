@@ -1,0 +1,63 @@
+body {
+  font-family: futura;
+  margin: 0px;
+}
+
+#logo {
+  margin: 30px;
+}
+
+header {
+  display: flex;
+}
+
+#header-text {
+  flex: auto;
+}
+
+header hr {
+  border: 3px solid black;
+}
+
+h2 {
+  margin-top: 70px;
+  font-weight: 100;
+  font-size: 40px;
+}
+
+nav {
+  margin: 50px 0 40px 0;
+  padding-right: 80px;
+  font-size: 25px;
+  display: flex;
+  justify-content: end;
+}
+
+nav span {
+  margin: 0 40px;
+}
+
+#products-nav {
+  font-weight: bold;
+  background-color: yellow;
+}
+
+#product-grid {
+  margin: 80px 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+img.product {
+  border: 3px solid black;
+}
+
+.product-card {
+  margin: 20px;
+}
+
+h3 {
+  margin-top: 5px;
+  font-weight: 200;
+  font-size: 25px;
+}
