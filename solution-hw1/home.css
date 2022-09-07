@@ -83,6 +83,7 @@ select {
   font-family: inherit;
   padding: 5px;
 
+  /* Hides default browser styling of select*/
   margin: 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -90,6 +91,8 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
 
+  /* Generates a 45 degree triangle and a mirrored 135 degree triangle 
+     creating the appearance of a downward triangle with no image! */
   background-image:
     linear-gradient(45deg, transparent 50%, black 50%),
     linear-gradient(135deg, black 50%, transparent 50%);
@@ -100,6 +103,45 @@ select {
     8px 8px,
     8px 8px;
   background-repeat: no-repeat;
+}
+
+/* Radio button styling based on this stackoverflow thread: 
+   https://stackoverflow.com/questions/5523735/how-to-make-a-radio-button-look-like-a-toggle-button
+   particularly the response by Simon Darby.
+*/
+.row-pack {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Gives the radio the appearance of a regular button*/
+.row-pack label {
+  float: left;
+  width: 33px;
+  margin-left: 4px;
+  background-color: white;
+  border: 2px solid black;
+  overflow: auto;
+}
+
+/* Style the text in the radio button */
+.row-pack label span {
+  text-align:center;
+  display:block;
+  padding: 3px 0;
+}
+
+/* Hides default radio button*/
+.row-pack label input {
+  position: absolute;
+  top: -20px;
+}
+
+/* Visually differentiates selected button*/
+.row-pack input:checked + span {
+  background-color: lightgray;
 }
 
 /* I used http://howtocenterincss.com to help here!*/
