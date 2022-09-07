@@ -37,9 +37,9 @@ nav span {
   margin: 0 40px;
 }
 
-#products-nav {
-  font-weight: bold;
+#products-nav:hover {
   background-color: yellow;
+  cursor: pointer;
 }
 
 #product-grid {
@@ -64,6 +64,44 @@ h3 {
   font-size: 25px;
 }
 
+.row-glazing {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Selector styling based on https://www.sliderrevolution.com/resources/css-select-styles/
+   Especially the triangle generation and the hiding of default browser styling. */
+select {
+  width: 160px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 0px;
+  display: inline-block;
+  font-size: 15px;
+  font-family: inherit;
+  padding: 5px;
+
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-image:
+    linear-gradient(45deg, transparent 50%, black 50%),
+    linear-gradient(135deg, black 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) calc(1em - 2px),
+    calc(100% - 10px) calc(1em - 2px);
+  background-size:
+    8px 8px,
+    8px 8px;
+  background-repeat: no-repeat;
+}
+
 /* I used http://howtocenterincss.com to help here!*/
 .row-cart {
   font-size: 20px;
@@ -74,7 +112,8 @@ h3 {
 }
 
 button {
-  font-family: futura;
+  width: 160px;
+  font-family: inherit;
   font-size: 20px;
   background-color: white;
   border: 2px solid black;
