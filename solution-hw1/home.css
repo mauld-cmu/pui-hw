@@ -43,9 +43,10 @@ nav span {
 }
 
 #product-grid {
-  margin: 80px 30px;
+  margin: 80px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
 }
 
 img.product {
@@ -53,11 +54,34 @@ img.product {
 }
 
 .product-card {
-  margin: 20px;
+  margin: 0 0 90px;
+  max-width: 286px;
 }
 
 h3 {
-  margin-top: 5px;
+  margin: 5px 0 10px 0;
   font-weight: 200;
   font-size: 25px;
+}
+
+/* I used http://howtocenterincss.com to help here!*/
+.row-cart {
+  font-size: 20px;
+  font-weight: 300;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  font-family: futura;
+  font-size: 20px;
+  background-color: white;
+  border: 2px solid black;
+  padding: 5px 15px;
+}
+
+button:hover {
+  background-color: yellow;
+  cursor: pointer;
 }
