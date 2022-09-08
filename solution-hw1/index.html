@@ -6,6 +6,7 @@
   <title>Bun Bun Bake Shop</title>
   
   <body>
+    <!-- Header contains Logo, Navigation, and Header -->
     <header>
       <img id="logo" src="logo/logo-01.svg" alt="Bun Bun Bake Shop logo with text" width="380" />
       <div id="header-text">
@@ -14,15 +15,18 @@
           <span id="cart-nav">CART</span>
         </nav>
         <hr>
-        <h2>Our hand-made cinnamon rolls</h2>
+        <h1>Our hand-made cinnamon rolls</h1>
       </div>
     </header>
     
+    <!-- Product Grid contains all Product Cards (Cinnamon Roll Listings) -->
     <div id="product-grid">
+      <!-- Product Cards are the listings for Cinnamon Rolls, with info and inputs -->
       <article class="product-card" id="original">
         <img class="product" src="products/original-cinnamon-roll.jpg" alt="Picture of original flavor cinnamon roll" width="280">
         <h3>Original cinnamon roll</h3>
 
+        <!-- Selection Bar -->
         <div class="row-glazing">
           <span>Glazing:</span>
           <select>
@@ -33,6 +37,7 @@
           </select>
         </div>
 
+        <!-- Radio Buttons restyled with CSS for Pack Size Selection -->
         <div class="row-pack">
           <span>Pack Size:</span>
           <div>
@@ -55,12 +60,14 @@
           </div>
         </div>
 
+        <!-- Add to Cart button and Price -->
         <div class="row-cart">
           <span>$ 2.49</span>
           <button>Add to Cart</button>
         </div>
       </article>
       
+      <!-- Duplicate Product Card HTML, with changes for Apple -->
       <article class="product-card" id="apple">
         <img class="product" src="products/apple-cinnamon-roll.jpg" alt="Picture of apple flavored cinnamon roll" width="280">
         <h3>Apple cinnamon roll</h3>
@@ -102,6 +109,7 @@
         </div>
       </article>
       
+      <!-- Duplicate Product Card HTML, with changes for Raisin -->
       <article class="product-card" id="raisin">
         <img class="product" src="products/raisin-cinnamon-roll.jpg" alt="Picture of raisin flavored cinnamon roll" width="280">
         <h3>Raisin cinnamon roll</h3>
@@ -143,6 +151,7 @@
         </div>
       </article>
       
+      <!-- Duplicate Product Card HTML, with changes for Walnut -->
       <article class="product-card" id="walnut">
         <img class="product" src="products/walnut-cinnamon-roll.jpg" alt="Picture of walnut flavored cinnamon roll" width="280">
         <h3>Walnut cinnamon roll</h3>
@@ -184,6 +193,7 @@
         </div>
       </article>
       
+      <!-- Duplicate Product Card HTML, with changes for Chocolate -->
       <article class="product-card" id="chocolate">
         <img class="product" src="products/double-chocolate-cinnamon-roll.jpg" alt="Picture of double chocolate flavored cinnamon roll" width="280">
         <h3>Double-chocolate cinnamon roll</h3>
@@ -225,6 +235,7 @@
         </div>
       </article>
       
+      <!-- Duplicate Product Card HTML, with changes for Strawberry -->
       <article class="product-card" id="strawberry">
         <img class="product" src="products/strawberry-cinnamon-roll.jpg" alt="Picture of strawberry flavored cinnamon roll" width="280">
         <h3>Strawberry cinnamon roll</h3>
@@ -266,6 +277,5 @@
         </div>
       </article>
     </div>
-    
   </body>
 </html>
