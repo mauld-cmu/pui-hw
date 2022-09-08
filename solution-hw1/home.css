@@ -1,5 +1,6 @@
 body {
   font-family: futura, sans-serif;
+  /* Removes browser margins so <hr> can reach the edge */
   margin: 0px;
 }
 
@@ -86,7 +87,7 @@ select {
   font-family: inherit;
   padding: 5px;
 
-  /* Hides default browser styling of select*/
+  /* Hides default browser styling of select */
   margin: 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -123,7 +124,7 @@ select:hover {
   margin-bottom: 10px;
 }
 
-/* Gives the radio the appearance of a regular button*/
+/* Gives the radio the appearance of a regular button */
 .row-pack label {
   float: left;
   width: 33px;
@@ -134,29 +135,29 @@ select:hover {
 }
 
 .row-pack label:hover {
-  cursor:pointer;
+  cursor: pointer;
 }
 
 /* Style the text in the radio button */
 .row-pack label span {
-  text-align:center;
-  display:block;
+  text-align: center;
+  display: block;
   padding: 3px 0;
 }
 
-/* Hides default radio button*/
+/* Hides default radio button */
 .row-pack label input {
   position: absolute;
   top: -20px;
 }
 
-/* Visually differentiates selected button*/
+/* Visually differentiates selected button */
 .row-pack input:checked + span {
   background-color: lightgray;
 }
 
 /* Product Card Price & Button */
-/* I used http://howtocenterincss.com to help here!*/
+/* I used http://howtocenterincss.com to help here! */
 .row-cart {
   font-size: 20px;
   font-weight: 300;
