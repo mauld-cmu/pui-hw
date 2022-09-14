@@ -1,11 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
   <meta charset="UTF-8">
-  <title>Page Title</title>
+  <link rel="stylesheet" href="home.css">
+
+  <title>Bun Bun Bake Shop</title>
   
   <body>
+    <!-- Header contains Logo, Navigation, and Header -->
+    <header>
+      <img id="logo" src="logo/logo-01.svg" alt="Bun Bun Bake Shop logo with text" width="380" />
+      <div id="header-text">
+        <nav>
+          <span id="products-nav">PRODUCTS</span>
+          <span id="cart-nav">CART</span>
+        </nav>
+        <hr>
+        <h1>Our hand-made cinnamon rolls</h1>
+      </div>
+    </header>
+    
+    <!-- Product Grid contains all Product Cards (Cinnamon Roll Listings) -->
+    <div id="product-grid">
+      <!-- Product Cards are the listings for Cinnamon Rolls, with info and inputs -->
+      <article class="product-card" id="original">
+        <img class="product" src="products/original-cinnamon-roll.jpg" alt="Picture of original flavor cinnamon roll" width="280">
+        <h3>Original cinnamon roll</h3>
 
-    <h1>I am the solution to HW2!</h1>
+        <!-- Selection Bar -->
+        <div class="row-glazing">
+          <span>Glazing:</span>
+          <select>
+            <option value="original">Keep original</option>
+            <option value="sugar">Sugar milk</option>
+            <option value="original">Original milk</option>
+            <option value="chocolate">Double chocolate</option>
+          </select>
+        </div>
 
+        <!-- Radio Buttons restyled with CSS for Pack Size Selection -->
+        <div class="row-pack">
+          <span>Pack Size:</span>
+          <div>
+            <label>
+              <input type="radio" name="original-pack">
+              <span>1</span>
+            </label>
+            <label>
+              <input type="radio" name="original-pack">
+              <span>3</span>
+            </label>
+            <label>
+              <input type="radio" name="original-pack">
+              <span>6</span>
+            </label>
+            <label>
+              <input type="radio" name="original-pack">
+              <span>12</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Add to Cart button and Price -->
+        <div class="row-cart">
+          <span>$ 2.49</span>
+          <button>Add to Cart</button>
+        </div>
+      </article>
+      
+      <!-- Duplicate Product Card HTML, with changes for Apple -->
+      <article class="product-card" id="apple">
+        <img class="product" src="products/apple-cinnamon-roll.jpg" alt="Picture of apple flavored cinnamon roll" width="280">
+        <h3>Apple cinnamon roll</h3>
+        <div class="row-glazing">
+          <span>Glazing:</span>
+          <select>
+            <option value="original">Keep original</option>
+            <option value="sugar">Sugar milk</option>
+            <option value="original">Original milk</option>
+            <option value="chocolate">Double chocolate</option>
+          </select>
+        </div>
+        
+        <div class="row-pack">
+          <span>Pack Size:</span>
+          <div>
+            <label>
+              <input type="radio" name="apple-pack">
+              <span>1</span>
+            </label>
+            <label>
+              <input type="radio" name="apple-pack">
+              <span>3</span>
+            </label>
+            <label>
+              <input type="radio" name="apple-pack">
+              <span>6</span>
+            </label>
+            <label>
+              <input type="radio" name="apple-pack">
+              <span>12</span>
+            </label>
+          </div>
+        </div>
+        
+        <div class="row-cart">
+          <span>$ 3.49</span>
+          <button>Add to Cart</button>
+        </div>
+      </article>
+      
+      <!-- Duplicate Product Card HTML, with changes for Raisin -->
+      <article class="product-card" id="raisin">
+        <img class="product" src="products/raisin-cinnamon-roll.jpg" alt="Picture of raisin flavored cinnamon roll" width="280">
+        <h3>Raisin cinnamon roll</h3>
+        <div class="row-glazing">
+          <span>Glazing:</span>
+          <select>
+            <option value="original">Keep original</option>
+            <option value="sugar">Sugar milk</option>
+            <option value="original">Original milk</option>
+            <option value="chocolate">Double chocolate</option>
+          </select>
+        </div>
+        
+        <div class="row-pack">
+          <span>Pack Size:</span>
+          <div>
+            <label>
+              <input type="radio" name="raisin-pack">
+              <span>1</span>
+            </label>
+            <label>
+              <input type="radio" name="raisin-pack">
+              <span>3</span>
+            </label>
+            <label>
+              <input type="radio" name="raisin-pack">
+              <span>6</span>
+            </label>
+            <label>
+              <input type="radio" name="raisin-pack">
+              <span>12</span>
+            </label>
+          </div>
+        </div>
+        
+        <div class="row-cart">
+          <span>$ 2.99</span>
+          <button>Add to Cart</button>
+        </div>
+      </article>
+      
+      <!-- Duplicate Product Card HTML, with changes for Walnut -->
+      <article class="product-card" id="walnut">
+        <img class="product" src="products/walnut-cinnamon-roll.jpg" alt="Picture of walnut flavored cinnamon roll" width="280">
+        <h3>Walnut cinnamon roll</h3>
+        <div class="row-glazing">
+          <span>Glazing:</span>
+          <select>
+            <option value="original">Keep original</option>
+            <option value="sugar">Sugar milk</option>
+            <option value="original">Original milk</option>
+            <option value="chocolate">Double chocolate</option>
+          </select>
+        </div>
+        
+        <div class="row-pack">
+          <span>Pack Size:</span>
+          <div>
+            <label>
+              <input type="radio" name="walnut-pack">
+              <span>1</span>
+            </label>
+            <label>
+              <input type="radio" name="walnut-pack">
+              <span>3</span>
+            </label>
+            <label>
+              <input type="radio" name="walnut-pack">
+              <span>6</span>
+            </label>
+            <label>
+              <input type="radio" name="walnut-pack">
+              <span>12</span>
+            </label>
+          </div>
+        </div>
+        
+        <div class="row-cart">
+          <span>$ 3.49</span>
+          <button>Add to Cart</button>
+        </div>
+      </article>
+      
+      <!-- Duplicate Product Card HTML, with changes for Chocolate -->
+      <article class="product-card" id="chocolate">
+        <img class="product" src="products/double-chocolate-cinnamon-roll.jpg" alt="Picture of double chocolate flavored cinnamon roll" width="280">
+        <h3>Double-chocolate cinnamon roll</h3>
+        <div class="row-glazing">
+          <span>Glazing:</span>
+          <select>
+            <option value="original">Keep original</option>
+            <option value="sugar">Sugar milk</option>
+            <option value="original">Original milk</option>
+            <option value="chocolate">Double chocolate</option>
+          </select>
+        </div>
+        
+        <div class="row-pack">
+          <span>Pack Size:</span>
+          <div>
+            <label>
+              <input type="radio" name="chocolate-pack">
+              <span>1</span>
+            </label>
+            <label>
+              <input type="radio" name="chocolate-pack">
+              <span>3</span>
+            </label>
+            <label>
+              <input type="radio" name="chocolate-pack">
+              <span>6</span>
+            </label>
+            <label>
+              <input type="radio" name="chocolate-pack">
+              <span>12</span>
+            </label>
+          </div>
+        </div>
+        
+        <div class="row-cart">
+          <span>$ 3.99</span>
+          <button>Add to Cart</button>
+        </div>
+      </article>
+      
+      <!-- Duplicate Product Card HTML, with changes for Strawberry -->
+      <article class="product-card" id="strawberry">
+        <img class="product" src="products/strawberry-cinnamon-roll.jpg" alt="Picture of strawberry flavored cinnamon roll" width="280">
+        <h3>Strawberry cinnamon roll</h3>
+        <div class="row-glazing">
+          <span>Glazing:</span>
+          <select>
+            <option value="original">Keep original</option>
+            <option value="sugar">Sugar milk</option>
+            <option value="original">Original milk</option>
+            <option value="chocolate">Double chocolate</option>
+          </select>
+        </div>
+        
+        <div class="row-pack">
+          <span>Pack Size:</span>
+          <div>
+            <label>
+              <input type="radio" name="strawberry-pack">
+              <span>1</span>
+            </label>
+            <label>
+              <input type="radio" name="strawberry-pack">
+              <span>3</span>
+            </label>
+            <label>
+              <input type="radio" name="strawberry-pack">
+              <span>6</span>
+            </label>
+            <label>
+              <input type="radio" name="strawberry-pack">
+              <span>12</span>
+            </label>
+          </div>
+        </div>
+        
+        <div class="row-cart">
+          <span>$ 3.99</span>
+          <button>Add to Cart</button>
+        </div>
+      </article>
+    </div>
   </body>
 </html>
