@@ -33,11 +33,8 @@
           <!-- Selection Bar -->
           <div class="row-glazing">
             <span>Glazing:</span>
-            <select name="original-glaze" onchange="formChange('original')">
-              <option value="keepOriginal">Keep original</option>
-              <option value="sugarMilk">Sugar milk</option>
-              <option value="vanillaMilk">Vanilla milk</option>
-              <option value="doubleChocolate">Double chocolate</option>
+            <select class="select-glaze" name="original-glaze" onchange="formChange('original')">
+              <!-- Populates Live -->
             </select>
           </div>
           
@@ -73,212 +70,230 @@
       </article>
       
       <!-- Duplicate Product Card HTML, with changes for Apple -->
-      <article class="product-card" id="apple">
+      <article class="product-card">
         <img class="product" src="products/apple-cinnamon-roll.jpg" alt="Picture of apple flavored cinnamon roll" width="280">
         <h3>Apple cinnamon roll</h3>
-        <div class="row-glazing">
-          <span>Glazing:</span>
-          <select>
-            <option value="keepOriginal">Keep original</option>
-            <option value="sugarMilk">Sugar milk</option>
-            <option value="vanillaMilk">Original milk</option>
-            <option value="doubleChocolate">Double chocolate</option>
-          </select>
-        </div>
-        
-        <div class="row-pack">
-          <span>Pack Size:</span>
-          <div>
-            <label>
-              <input type="radio" name="apple-pack">
-              <span>1</span>
-            </label>
-            <label>
-              <input type="radio" name="apple-pack">
-              <span>3</span>
-            </label>
-            <label>
-              <input type="radio" name="apple-pack">
-              <span>6</span>
-            </label>
-            <label>
-              <input type="radio" name="apple-pack">
-              <span>12</span>
-            </label>
+      
+        <form id="form-apple">
+          <!-- Selection Bar -->
+          <div class="row-glazing">
+            <span>Glazing:</span>
+            <select class="select-glaze" name="apple-glaze" onchange="formChange('apple')">
+              <!-- Populates Live -->
+            </select>
           </div>
-        </div>
-        
+      
+          <!-- Radio Buttons restyled with CSS for Pack Size Selection -->
+          <div class="row-pack">
+            <span>Pack Size:</span>
+            <div onchange="formChange('apple')">
+              <label>
+                <input type="radio" value="onePack" name="apple-pack" checked>
+                <span>1</span>
+              </label>
+              <label>
+                <input type="radio" value="threePack" name="apple-pack">
+                <span>3</span>
+              </label>
+              <label>
+                <input type="radio" value="sixPack" name="apple-pack">
+                <span>6</span>
+              </label>
+              <label>
+                <input type="radio" value="twelvePack" name="apple-pack">
+                <span>12</span>
+              </label>
+            </div>
+          </div>
+        </form>
+      
+        <!-- Add to Cart button and Price -->
         <div class="row-cart">
-          <span>$ 3.49</span>
-          <button>Add to Cart</button>
+          <span id="apple-price">$ 2.49</span>
+          <button onclick="addToCart('apple')">Add to Cart</button>
         </div>
       </article>
-      
+
       <!-- Duplicate Product Card HTML, with changes for Raisin -->
-      <article class="product-card" id="raisin">
+      <article class="product-card">
         <img class="product" src="products/raisin-cinnamon-roll.jpg" alt="Picture of raisin flavored cinnamon roll" width="280">
         <h3>Raisin cinnamon roll</h3>
-        <div class="row-glazing">
-          <span>Glazing:</span>
-          <select>
-            <option value="keepOriginal">Keep original</option>
-            <option value="sugarMilk">Sugar milk</option>
-            <option value="vanillaMilk">Original milk</option>
-            <option value="doubleChocolate">Double chocolate</option>
-          </select>
-        </div>
-        
-        <div class="row-pack">
-          <span>Pack Size:</span>
-          <div>
-            <label>
-              <input type="radio" name="raisin-pack">
-              <span>1</span>
-            </label>
-            <label>
-              <input type="radio" name="raisin-pack">
-              <span>3</span>
-            </label>
-            <label>
-              <input type="radio" name="raisin-pack">
-              <span>6</span>
-            </label>
-            <label>
-              <input type="radio" name="raisin-pack">
-              <span>12</span>
-            </label>
+      
+        <form id="form-raisin">
+          <!-- Selection Bar -->
+          <div class="row-glazing">
+            <span>Glazing:</span>
+            <select class="select-glaze" name="raisin-glaze" onchange="formChange('raisin')">
+              <!-- Populates Live -->
+            </select>
           </div>
-        </div>
-        
+      
+          <!-- Radio Buttons restyled with CSS for Pack Size Selection -->
+          <div class="row-pack">
+            <span>Pack Size:</span>
+            <div onchange="formChange('raisin')">
+              <label>
+                <input type="radio" value="onePack" name="raisin-pack" checked>
+                <span>1</span>
+              </label>
+              <label>
+                <input type="radio" value="threePack" name="raisin-pack">
+                <span>3</span>
+              </label>
+              <label>
+                <input type="radio" value="sixPack" name="raisin-pack">
+                <span>6</span>
+              </label>
+              <label>
+                <input type="radio" value="twelvePack" name="raisin-pack">
+                <span>12</span>
+              </label>
+            </div>
+          </div>
+        </form>
+      
+        <!-- Add to Cart button and Price -->
         <div class="row-cart">
-          <span>$ 2.99</span>
-          <button>Add to Cart</button>
+          <span id="raisin-price">$ 2.49</span>
+          <button onclick="addToCart('raisin')">Add to Cart</button>
         </div>
       </article>
       
       <!-- Duplicate Product Card HTML, with changes for Walnut -->
-      <article class="product-card" id="walnut">
-        <img class="product" src="products/walnut-cinnamon-roll.jpg" alt="Picture of walnut flavored cinnamon roll" width="280">
+      <article class="product-card">
+        <img class="product" src="products/walnut-cinnamon-roll.jpg" alt="Picture of walnut flavored cinnamon roll"
+          width="280">
         <h3>Walnut cinnamon roll</h3>
-        <div class="row-glazing">
-          <span>Glazing:</span>
-          <select>
-            <option value="keepOriginal">Keep original</option>
-            <option value="sugarMilk">Sugar milk</option>
-            <option value="vanillaMilk">Original milk</option>
-            <option value="doubleChocolate">Double chocolate</option>
-          </select>
-        </div>
-        
-        <div class="row-pack">
-          <span>Pack Size:</span>
-          <div>
-            <label>
-              <input type="radio" name="walnut-pack">
-              <span>1</span>
-            </label>
-            <label>
-              <input type="radio" name="walnut-pack">
-              <span>3</span>
-            </label>
-            <label>
-              <input type="radio" name="walnut-pack">
-              <span>6</span>
-            </label>
-            <label>
-              <input type="radio" name="walnut-pack">
-              <span>12</span>
-            </label>
+      
+        <form id="form-walnut">
+          <!-- Selection Bar -->
+          <div class="row-glazing">
+            <span>Glazing:</span>
+            <select class="select-glaze" name="walnut-glaze" onchange="formChange('walnut')">
+              <!-- Populates Live -->
+            </select>
           </div>
-        </div>
-        
+      
+          <!-- Radio Buttons restyled with CSS for Pack Size Selection -->
+          <div class="row-pack">
+            <span>Pack Size:</span>
+            <div onchange="formChange('walnut')">
+              <label>
+                <input type="radio" value="onePack" name="walnut-pack" checked>
+                <span>1</span>
+              </label>
+              <label>
+                <input type="radio" value="threePack" name="walnut-pack">
+                <span>3</span>
+              </label>
+              <label>
+                <input type="radio" value="sixPack" name="walnut-pack">
+                <span>6</span>
+              </label>
+              <label>
+                <input type="radio" value="twelvePack" name="walnut-pack">
+                <span>12</span>
+              </label>
+            </div>
+          </div>
+        </form>
+      
+        <!-- Add to Cart button and Price -->
         <div class="row-cart">
-          <span>$ 3.49</span>
-          <button>Add to Cart</button>
+          <span id="walnut-price">$ 2.49</span>
+          <button onclick="addToCart('walnut')">Add to Cart</button>
         </div>
       </article>
       
       <!-- Duplicate Product Card HTML, with changes for Chocolate -->
-      <article class="product-card" id="chocolate">
-        <img class="product" src="products/double-chocolate-cinnamon-roll.jpg" alt="Picture of double chocolate flavored cinnamon roll" width="280">
+      <article class="product-card">
+        <img class="product" src="products/double-chocolate-cinnamon-roll.jpg" alt="Picture of Double Chocolate flavored cinnamon roll"
+          width="280">
         <h3>Double-chocolate cinnamon roll</h3>
-        <div class="row-glazing">
-          <span>Glazing:</span>
-          <select>
-            <option value="keepOriginal">Keep original</option>
-            <option value="sugarMilk">Sugar milk</option>
-            <option value="vanillaMilk">Original milk</option>
-            <option value="doubleChocolate">Double chocolate</option>
-          </select>
-        </div>
-        
-        <div class="row-pack">
-          <span>Pack Size:</span>
-          <div>
-            <label>
-              <input type="radio" name="chocolate-pack">
-              <span>1</span>
-            </label>
-            <label>
-              <input type="radio" name="chocolate-pack">
-              <span>3</span>
-            </label>
-            <label>
-              <input type="radio" name="chocolate-pack">
-              <span>6</span>
-            </label>
-            <label>
-              <input type="radio" name="chocolate-pack">
-              <span>12</span>
-            </label>
+      
+        <form id="form-chocolate">
+          <!-- Selection Bar -->
+          <div class="row-glazing">
+            <span>Glazing:</span>
+            <select class="select-glaze" name="chocolate-glaze" onchange="formChange('chocolate')">
+              <!-- Populates Live -->
+            </select>
           </div>
-        </div>
-        
+      
+          <!-- Radio Buttons restyled with CSS for Pack Size Selection -->
+          <div class="row-pack">
+            <span>Pack Size:</span>
+            <div onchange="formChange('chocolate')">
+              <label>
+                <input type="radio" value="onePack" name="chocolate-pack" checked>
+                <span>1</span>
+              </label>
+              <label>
+                <input type="radio" value="threePack" name="chocolate-pack">
+                <span>3</span>
+              </label>
+              <label>
+                <input type="radio" value="sixPack" name="chocolate-pack">
+                <span>6</span>
+              </label>
+              <label>
+                <input type="radio" value="twelvePack" name="chocolate-pack">
+                <span>12</span>
+              </label>
+            </div>
+          </div>
+        </form>
+      
+        <!-- Add to Cart button and Price -->
         <div class="row-cart">
-          <span>$ 3.99</span>
-          <button>Add to Cart</button>
+          <span id="chocolate-price">$ 2.49</span>
+          <button onclick="addToCart('chocolate')">Add to Cart</button>
         </div>
       </article>
       
       <!-- Duplicate Product Card HTML, with changes for Strawberry -->
-      <article class="product-card" id="strawberry">
-        <img class="product" src="products/strawberry-cinnamon-roll.jpg" alt="Picture of strawberry flavored cinnamon roll" width="280">
+      <article class="product-card">
+        <img class="product" src="products/strawberry-cinnamon-roll.jpg"
+          alt="Picture of Strawberry flavored cinnamon roll" width="280">
         <h3>Strawberry cinnamon roll</h3>
-        <div class="row-glazing">
-          <span>Glazing:</span>
-          <select>
-            <option value="keepOriginal">Keep original</option>
-            <option value="sugarMilk">Sugar milk</option>
-            <option value="vanillaMilk">Original milk</option>
-            <option value="doubleChocolate">Double chocolate</option>
-          </select>
-        </div>
-        
-        <div class="row-pack">
-          <span>Pack Size:</span>
-          <div>
-            <label>
-              <input type="radio" name="strawberry-pack">
-              <span>1</span>
-            </label>
-            <label>
-              <input type="radio" name="strawberry-pack">
-              <span>3</span>
-            </label>
-            <label>
-              <input type="radio" name="strawberry-pack">
-              <span>6</span>
-            </label>
-            <label>
-              <input type="radio" name="strawberry-pack">
-              <span>12</span>
-            </label>
+      
+        <form id="form-strawberry">
+          <!-- Selection Bar -->
+          <div class="row-glazing">
+            <span>Glazing:</span>
+            <select class="select-glaze" name="strawberry-glaze" onchange="formChange('strawberry')">
+              <!-- Populates Live -->
+            </select>
           </div>
-        </div>
-        
+      
+          <!-- Radio Buttons restyled with CSS for Pack Size Selection -->
+          <div class="row-pack">
+            <span>Pack Size:</span>
+            <div onchange="formChange('strawberry')">
+              <label>
+                <input type="radio" value="onePack" name="strawberry-pack" checked>
+                <span>1</span>
+              </label>
+              <label>
+                <input type="radio" value="threePack" name="strawberry-pack">
+                <span>3</span>
+              </label>
+              <label>
+                <input type="radio" value="sixPack" name="strawberry-pack">
+                <span>6</span>
+              </label>
+              <label>
+                <input type="radio" value="twelvePack" name="strawberry-pack">
+                <span>12</span>
+              </label>
+            </div>
+          </div>
+        </form>
+      
+        <!-- Add to Cart button and Price -->
         <div class="row-cart">
-          <span>$ 3.99</span>
-          <button>Add to Cart</button>
+          <span id="strawberry-price">$ 2.49</span>
+          <button onclick="addToCart('strawberry')">Add to Cart</button>
         </div>
       </article>
     </div>

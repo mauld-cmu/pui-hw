@@ -1,8 +1,16 @@
+// TODO: Combine glazingPrices and glazingNames into 1 object
 const glazingPrices = {
   "keepOriginal": 0.00,
   "sugarMilk": 0.00,
   "vanillaMilk": 0.50,
-  "doubleChocolate": 1.50
+  "doubleChocolate": 1.50,
+}
+
+const glazingNames = {
+  "keepOriginal": "Keep original",
+  "sugarMilk": "Sugar milk",
+  "vanillaMilk": "Vanilla milk",
+  "doubleChocolate": "Double chocolate",
 }
 
 const basePrices = {
@@ -19,6 +27,19 @@ const packSizeOptions = {
   "threePack": 3,
   "sixPack": 5,
   "twelvePack": 10
+}
+
+let cart = [];
+
+// Populates glaze values
+const glazeSelects = document.querySelectorAll('.select-glaze');
+for (const selectElement of glazeSelects) {
+  for (glazeType in glazingNames) {
+    let selectOption = document.createElement('option');
+    selectOption.value = glazeType;
+    selectOption.innerHTML = glazingNames[glazeType];
+    selectElement.appendChild(selectOption);
+  }
 }
 
 class Roll {
@@ -52,14 +73,6 @@ function getFormData(rollType) {
 
   console.log(newRoll);
 
-  // From https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat
-  let formatter = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD'
-  });
-
-  // Updates span displaying the cart price
-  document.getElementById(rollType + "-price").innerHTML = formatter.format(newRoll.price);
   return newRoll;
 }
 
@@ -70,6 +83,13 @@ function addToCart(type) {
 
 function formChange(type) {
   let updatedPrice = getFormData(type).price;
-  console.log(updatedPrice);
+  // From https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat
+  let formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD'
+  });
+
+  // Updates span displaying the cart price
+  document.getElementById(type + "-price").innerHTML = formatter.format(updatedPrice);
 }
 
