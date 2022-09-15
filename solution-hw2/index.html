@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="home.css">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="home.css">
+    <script defer src="js/home.js"></script>
+    <title>Bun Bun Bake Shop</title>
+  </head>
 
-  <title>Bun Bun Bake Shop</title>
   
   <body>
     <!-- Header contains Logo, Navigation, and Header -->
@@ -22,48 +25,50 @@
     <!-- Product Grid contains all Product Cards (Cinnamon Roll Listings) -->
     <div id="product-grid">
       <!-- Product Cards are the listings for Cinnamon Rolls, with info and inputs -->
-      <article class="product-card" id="original">
+      <article class="product-card">
         <img class="product" src="products/original-cinnamon-roll.jpg" alt="Picture of original flavor cinnamon roll" width="280">
         <h3>Original cinnamon roll</h3>
 
-        <!-- Selection Bar -->
-        <div class="row-glazing">
-          <span>Glazing:</span>
-          <select>
-            <option value="original">Keep original</option>
-            <option value="sugar">Sugar milk</option>
-            <option value="original">Original milk</option>
-            <option value="chocolate">Double chocolate</option>
-          </select>
-        </div>
-
-        <!-- Radio Buttons restyled with CSS for Pack Size Selection -->
-        <div class="row-pack">
-          <span>Pack Size:</span>
-          <div>
-            <label>
-              <input type="radio" name="original-pack">
-              <span>1</span>
-            </label>
-            <label>
-              <input type="radio" name="original-pack">
-              <span>3</span>
-            </label>
-            <label>
-              <input type="radio" name="original-pack">
-              <span>6</span>
-            </label>
-            <label>
-              <input type="radio" name="original-pack">
-              <span>12</span>
-            </label>
+        <form id="form-original">
+          <!-- Selection Bar -->
+          <div class="row-glazing">
+            <span>Glazing:</span>
+            <select name="original-glaze" onchange="formChange('original')">
+              <option value="keepOriginal">Keep original</option>
+              <option value="sugarMilk">Sugar milk</option>
+              <option value="vanillaMilk">Vanilla milk</option>
+              <option value="doubleChocolate">Double chocolate</option>
+            </select>
           </div>
-        </div>
-
+          
+          <!-- Radio Buttons restyled with CSS for Pack Size Selection -->
+          <div class="row-pack">
+            <span>Pack Size:</span>
+            <div onchange="formChange('original')">
+              <label>
+                <input type="radio" value="onePack" name="original-pack" checked>
+                <span>1</span>
+              </label>
+              <label>
+                <input type="radio" value="threePack" name="original-pack">
+                <span>3</span>
+              </label>
+              <label>
+                <input type="radio" value="sixPack" name="original-pack">
+                <span>6</span>
+              </label>
+              <label>
+                <input type="radio" value="twelvePack" name="original-pack">
+                <span>12</span>
+              </label>
+            </div>
+          </div>
+        </form>
+        
         <!-- Add to Cart button and Price -->
         <div class="row-cart">
-          <span>$ 2.49</span>
-          <button>Add to Cart</button>
+          <span id="original-price">$ 2.49</span>
+          <button onclick="addToCart('original')">Add to Cart</button>
         </div>
       </article>
       
@@ -74,10 +79,10 @@
         <div class="row-glazing">
           <span>Glazing:</span>
           <select>
-            <option value="original">Keep original</option>
-            <option value="sugar">Sugar milk</option>
-            <option value="original">Original milk</option>
-            <option value="chocolate">Double chocolate</option>
+            <option value="keepOriginal">Keep original</option>
+            <option value="sugarMilk">Sugar milk</option>
+            <option value="vanillaMilk">Original milk</option>
+            <option value="doubleChocolate">Double chocolate</option>
           </select>
         </div>
         
@@ -116,10 +121,10 @@
         <div class="row-glazing">
           <span>Glazing:</span>
           <select>
-            <option value="original">Keep original</option>
-            <option value="sugar">Sugar milk</option>
-            <option value="original">Original milk</option>
-            <option value="chocolate">Double chocolate</option>
+            <option value="keepOriginal">Keep original</option>
+            <option value="sugarMilk">Sugar milk</option>
+            <option value="vanillaMilk">Original milk</option>
+            <option value="doubleChocolate">Double chocolate</option>
           </select>
         </div>
         
@@ -158,10 +163,10 @@
         <div class="row-glazing">
           <span>Glazing:</span>
           <select>
-            <option value="original">Keep original</option>
-            <option value="sugar">Sugar milk</option>
-            <option value="original">Original milk</option>
-            <option value="chocolate">Double chocolate</option>
+            <option value="keepOriginal">Keep original</option>
+            <option value="sugarMilk">Sugar milk</option>
+            <option value="vanillaMilk">Original milk</option>
+            <option value="doubleChocolate">Double chocolate</option>
           </select>
         </div>
         
@@ -200,10 +205,10 @@
         <div class="row-glazing">
           <span>Glazing:</span>
           <select>
-            <option value="original">Keep original</option>
-            <option value="sugar">Sugar milk</option>
-            <option value="original">Original milk</option>
-            <option value="chocolate">Double chocolate</option>
+            <option value="keepOriginal">Keep original</option>
+            <option value="sugarMilk">Sugar milk</option>
+            <option value="vanillaMilk">Original milk</option>
+            <option value="doubleChocolate">Double chocolate</option>
           </select>
         </div>
         
@@ -242,10 +247,10 @@
         <div class="row-glazing">
           <span>Glazing:</span>
           <select>
-            <option value="original">Keep original</option>
-            <option value="sugar">Sugar milk</option>
-            <option value="original">Original milk</option>
-            <option value="chocolate">Double chocolate</option>
+            <option value="keepOriginal">Keep original</option>
+            <option value="sugarMilk">Sugar milk</option>
+            <option value="vanillaMilk">Original milk</option>
+            <option value="doubleChocolate">Double chocolate</option>
           </select>
         </div>
         
