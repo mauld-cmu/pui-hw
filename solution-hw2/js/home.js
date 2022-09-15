@@ -29,6 +29,13 @@ const packSizeOptions = {
   "twelvePack": 10
 }
 
+// Formats numbers into currency
+// From https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat
+const formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD'
+});
+
 let cart = [];
 
 // Populates glaze values
@@ -77,19 +84,27 @@ function getFormData(rollType) {
 }
 
 function addToCart(type) {
-  getFormData(type);
-
+  cart.push(getFormData(type));
+  updateCartTag();
+  console.log(cart);
 }
 
 function formChange(type) {
   let updatedPrice = getFormData(type).price;
-  // From https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat
-  let formatter = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD'
-  });
 
   // Updates span displaying the cart price
   document.getElementById(type + "-price").innerHTML = formatter.format(updatedPrice);
 }
 
+function updateCartTag() {
+  let totalPrice = cart.reduce((sum, object) => {
+    return sum + object.price;
+  }, 0);
+
+  if (cart.length == 0 || cart.length > 1) {
+    document.getElementById("cart-count").innerHTML = cart.length + " items";
+  } else {
+    document.getElementById("cart-count").innerHTML = cart.length + " item";
+  }
+  document.getElementById("cart-price").innerHTML = "Total: " + formatter.format(totalPrice);
+}

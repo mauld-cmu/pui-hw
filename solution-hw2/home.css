@@ -22,27 +22,38 @@ header hr {
 }
 
 h1 {
-  margin-top: 70px;
+  margin-top: 60px;
   font-weight: 100;
   font-size: 40px;
 }
 
 /* Nav Styling */
 nav {
-  margin: 50px 0 40px 0;
-  padding-right: 80px;
+  margin-top: 70px;
+  padding-right: 100px;
   font-size: 25px;
   display: flex;
   justify-content: end;
 }
 
 nav span {
-  margin: 0 40px;
+  margin-left: 90px;
 }
 
-nav span:hover {
+#products-nav span {
+  background-color: yellow;
+}
+
+#cart-nav span:hover {
   background-color: yellow;
   cursor: pointer;
+}
+
+#cart-count, #cart-price {
+  margin: 3px;
+  text-align: right;
+  font-weight: 40;
+  font-size: 15px;
 }
 
 /* Grid Styling */
