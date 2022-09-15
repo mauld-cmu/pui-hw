@@ -47,13 +47,38 @@ nav span {
 #cart-nav span:hover {
   background-color: yellow;
   cursor: pointer;
+  position: relative;
 }
 
 #cart-count, #cart-price {
   margin: 3px;
   text-align: right;
-  font-weight: 40;
+  font-weight: lighter;
   font-size: 15px;
+}
+
+#cart-popup {
+  display: none;
+  box-sizing: border-box;
+  position: absolute;
+  margin-left: 30px;
+  top: 110px;
+  width: 200px;
+  height: 150px;
+  font-size: 12px;
+  font-weight: lighter;
+  background-color: white;
+  border: 1px solid gray;
+  padding: 10px;
+}
+
+#cart-popup p {
+  margin: 5px 0 0 0;
+}
+
+#cart-roll-name {
+  font-weight: bold;
+  padding-top: 20px;
 }
 
 /* Grid Styling */

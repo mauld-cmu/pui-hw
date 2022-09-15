@@ -13,6 +13,7 @@ const glazingNames = {
   "doubleChocolate": "Double chocolate",
 }
 
+//TODO: Combine with rollNames 
 const basePrices = {
   "original": 2.49,
   "apple": 3.49,
@@ -22,11 +23,28 @@ const basePrices = {
   "strawberry": 3.99
 }
 
+const rollNames = {
+  "original": "Original cinnamon roll",
+  "apple": "Apple cinnamon roll",
+  "raisin": "Raisin cinnamon roll",
+  "walnut": "Walnut cinnamon roll",
+  "chocolate": "Double-chocolate cinnamon roll",
+  "strawberry": "Strawberry cinnamon roll"
+}
+
+//TODO: Combine with packSizeListing
 const packSizeOptions = {
   "onePack": 1,
   "threePack": 3,
   "sixPack": 5,
   "twelvePack": 10
+}
+
+const packSizeListing = {
+  "onePack": 1,
+  "threePack": 3,
+  "sixPack": 6,
+  "twelvePack": 12
 }
 
 // Formats numbers into currency
@@ -78,15 +96,7 @@ function getFormData(rollType) {
   let packSize = data.get(rollType + "-pack");
   let newRoll = new Roll(type, glazing, packSize)
 
-  console.log(newRoll);
-
   return newRoll;
-}
-
-function addToCart(type) {
-  cart.push(getFormData(type));
-  updateCartTag();
-  console.log(cart);
 }
 
 function formChange(type) {
@@ -97,8 +107,10 @@ function formChange(type) {
 }
 
 function updateCartTag() {
-  let totalPrice = cart.reduce((sum, object) => {
-    return sum + object.price;
+  // Sum of object property code block adapted from 
+  // https://bobbyhadz.com/blog/javascript-get-sum-of-array-object-values 
+  let totalPrice = cart.reduce((sum, roll) => {
+    return sum + roll.price;
   }, 0);
 
   if (cart.length == 0 || cart.length > 1) {
@@ -107,4 +119,34 @@ function updateCartTag() {
     document.getElementById("cart-count").innerHTML = cart.length + " item";
   }
   document.getElementById("cart-price").innerHTML = "Total: " + formatter.format(totalPrice);
+}
+
+/*
+  Displays the information of a roll in a pop-up
+*/
+function openCartPopup(roll) {
+  document.getElementById("cart-popup").style.display = "block";
+  setTimeout(closePopup, 3000);
+  document.getElementById("cart-roll-name").innerHTML = rollNames[roll.type];
+  document.getElementById("cart-glaze-name").innerHTML = glazingNames[roll.glazing];
+  document.getElementById("cart-pack-size").innerHTML = 'Pack of ' + packSizeListing[roll.packSize];
+  document.getElementById("cart-pack-price").innerHTML = 'Price: ' + formatter.format(roll.price);
+}
+
+/*
+  Close Cart Popup
+*/
+function closePopup() {
+  document.getElementById("cart-popup").style.display = "none";
+}
+
+/*
+  Retrieves a Roll object from getFormData() and adds it to a cart array
+  Calls the updateCartTag function to update text in header
+*/
+function addToCart(type) {
+  let roll = getFormData(type)
+  cart.push(roll);
+  openCartPopup(roll);
+  updateCartTag();
 }
