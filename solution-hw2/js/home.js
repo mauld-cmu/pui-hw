@@ -1,50 +1,66 @@
-// TODO: Combine glazingPrices and glazingNames into 1 object
-const glazingPrices = {
-  "keepOriginal": 0.00,
-  "sugarMilk": 0.00,
-  "vanillaMilk": 0.50,
-  "doubleChocolate": 1.50,
+const glazing = {
+  "keepOriginal": {
+    price: 0.00,
+    displayName: "Keep original"
+  },
+  "sugarMilk": {
+    price: 0.00,
+    displayName: "Sugar milk"
+  },
+  "vanillaMilk": {
+    price: 0.50,
+    displayName: "Vanilla milk"
+  },
+  "doubleChocolate": {
+    price: 1.50,
+    displayName: "Double chocolate"
+  }
 }
 
-const glazingNames = {
-  "keepOriginal": "Keep original",
-  "sugarMilk": "Sugar milk",
-  "vanillaMilk": "Vanilla milk",
-  "doubleChocolate": "Double chocolate",
+const rolls = {
+  "original": {
+    basePrice: 2.49,
+    displayName: "Original cinnamon roll"
+  },
+  "apple": {
+    basePrice: 3.49,
+    displayName: "Apple cinnamon roll"
+  },
+  "raisin": {
+    basePrice: 2.99,
+    displayName: "Raisin cinnamon roll"
+  },
+  "walnut": {
+    basePrice: 3.49,
+    displayName: "Walnut cinnamon roll"
+  },
+  "chocolate": {
+    basePrice: 3.99,
+    displayName: "Double-chocolate cinnamon roll"
+  },
+  "strawberry": {
+    basePrice: 3.99,
+    displayName: "Strawberry cinnamon roll"
+  }
 }
 
-//TODO: Combine with rollNames 
-const basePrices = {
-  "original": 2.49,
-  "apple": 3.49,
-  "raisin": 2.99,
-  "walnut": 3.49,
-  "chocolate": 3.99,
-  "strawberry": 3.99
-}
-
-const rollNames = {
-  "original": "Original cinnamon roll",
-  "apple": "Apple cinnamon roll",
-  "raisin": "Raisin cinnamon roll",
-  "walnut": "Walnut cinnamon roll",
-  "chocolate": "Double-chocolate cinnamon roll",
-  "strawberry": "Strawberry cinnamon roll"
-}
-
-//TODO: Combine with packSizeListing
-const packSizeOptions = {
-  "onePack": 1,
-  "threePack": 3,
-  "sixPack": 5,
-  "twelvePack": 10
-}
-
-const packSizeListing = {
-  "onePack": 1,
-  "threePack": 3,
-  "sixPack": 6,
-  "twelvePack": 12
+const pack = {
+  "onePack": {
+    priceMultiplier: 1,
+    displayNumber: 1
+  },
+  "threePack": {
+    priceMultiplier: 3,
+    displayNumber: 3
+  },
+  "sixPack": {
+    priceMultiplier: 5,
+    displayNumber: 6
+  },
+  "twelvePack": {
+    priceMultiplier: 10,
+    displayNumber: 12
+  }
 }
 
 // Formats numbers into currency
@@ -59,24 +75,24 @@ let cart = [];
 // Populates glaze values
 const glazeSelects = document.querySelectorAll('.select-glaze');
 for (const selectElement of glazeSelects) {
-  for (glazeType in glazingNames) {
+  for (glazeType in glazing) {
     let selectOption = document.createElement('option');
     selectOption.value = glazeType;
-    selectOption.innerHTML = glazingNames[glazeType];
+    selectOption.innerHTML = glazing[glazeType].displayName;
     selectElement.appendChild(selectOption);
   }
 }
 
 class Roll {
-  constructor(type, glazing, packSize) {
+  constructor(type, glaze, packSize) {
     // types can be "original", "apple", "raisin", "walnut", "chocolate", or "strawberry"
     this.type = type;
     // glazing can be "keepOriginal", "sugarMilk", "vanillaMilk", "doubleChocolate"
-    this.glazing = glazing;
+    this.glaze = glaze;
     // packSize can be "onePack", "threePack", "sixPack", or "twelvePack"
     this.packSize = packSize;
     // calculates price 
-    this.price = (basePrices[this.type] + glazingPrices[this.glazing]) * packSizeOptions[this.packSize];
+    this.price = (rolls[this.type].basePrice + glazing[this.glaze].price) * pack[this.packSize].priceMultiplier;
   }
 }
 
@@ -127,9 +143,9 @@ function updateCartTag() {
 function openCartPopup(roll) {
   document.getElementById("cart-popup").style.display = "block";
   setTimeout(closePopup, 3000);
-  document.getElementById("cart-roll-name").innerHTML = rollNames[roll.type];
-  document.getElementById("cart-glaze-name").innerHTML = glazingNames[roll.glazing];
-  document.getElementById("cart-pack-size").innerHTML = 'Pack of ' + packSizeListing[roll.packSize];
+  document.getElementById("cart-roll-name").innerHTML = rolls[roll.type].displayName;
+  document.getElementById("cart-glaze-name").innerHTML = glazing[roll.glaze].displayName;
+  document.getElementById("cart-pack-size").innerHTML = 'Pack of ' + pack[roll.packSize].displayNumber;
   document.getElementById("cart-pack-price").innerHTML = 'Price: ' + formatter.format(roll.price);
 }
 
